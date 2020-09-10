@@ -1,0 +1,19 @@
+{
+  "name": "nodejs_express-mongodb",
+  "version": "1.0.0",
+  "description": "nodejs express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/komisarov-d/NodeJS_express-mongoDB.git"
+  },
+  "author": "Komisarov Dmitriu <komisarov.dev@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/komisarov-d/NodeJS_express-mongoDB/issues"
+  },
+  "homepage": "https://github.com/komisarov-d/NodeJS_express-mongoDB#readme"
+}
