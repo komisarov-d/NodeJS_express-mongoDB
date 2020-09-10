@@ -4,7 +4,8 @@
   "description": "nodejs express",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index",
+    "dev": "nodemon index"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/komisarov-d/NodeJS_express-mongoDB/issues"
   },
-  "homepage": "https://github.com/komisarov-d/NodeJS_express-mongoDB#readme"
+  "homepage": "https://github.com/komisarov-d/NodeJS_express-mongoDB#readme",
+  "dependencies": {
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mongoose": "^5.10.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
