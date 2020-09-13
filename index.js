@@ -1,24 +1,24 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const config = require('./config/default.json')
 const expressHandlebars = require('express-handlebars')
-const PORT = process.env.PORT || 3000
 const todosRoutes = require('./routes/todos')
+const PORT = process.env.PORT || 3000
 const app = express()
-//Конфигурации для шаблонизатора
-const handlebars = expressHandlebars.create({
+
+const hbs = expressHandlebars.create({
     defaultLayout: 'main',
-    extname: 'hbs'  //Расширение файлов handlebars
+    extname: 'hbs'
 })
 
-app.engine('hbs', handlebars.engine) //Регистрация движка по ключу hbs
+app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views', 'views')
-app.use(todosRoutes) // new middleware
+app.use(todosRoutes)
+
 const start = async () => {
     // Проверка запуска сервера
     try {
-        await mongoose.connect(config.mongoUri, {
+        await mongoose.connect("mongodb+srv://dmitriykomis:komisarov123@cluster0.5gmd6.azure.mongodb.net/todos", {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true,
@@ -29,7 +29,7 @@ const start = async () => {
         })
     } catch (e) {
         console.log('Server error', e)
-        process.exit()
+        // process.exit()
     }
 }
 
