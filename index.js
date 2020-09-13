@@ -4,6 +4,7 @@ const expressHandlebars = require('express-handlebars')
 const todosRoutes = require('./routes/todos')
 const PORT = process.env.PORT || 3000
 const app = express()
+const path = require('path')
 
 const hbs = expressHandlebars.create({
     defaultLayout: 'main',
@@ -13,7 +14,11 @@ const hbs = expressHandlebars.create({
 app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views', 'views')
+
+app.use(express.urlencoded({extended: true}))
+
 app.use(todosRoutes)
+app.use(express.static(path.join(__dirname, 'public')))
 
 const start = async () => {
     // Проверка запуска сервера
